@@ -59,10 +59,21 @@
       <div class="wrap">
         <div class="card">
           <h2>Case Intake Form</h2>
-          <p class="muted small">Netlify will capture these submissions once deployed. File uploads are optional.</p>
+          <p class="muted small">Submissions are captured by Netlify Forms after deploy. Attachments are optional.</p>
 
-          <form name="intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" enctype="multipart/form-data">
+          <!-- NETLIFY FORM (DETECTABLE AT BUILD TIME) -->
+          <form
+            name="intake"
+            method="POST"
+            action="/thanks.html"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            enctype="multipart/form-data"
+          >
+            <!-- REQUIRED: tells Netlify the form name -->
             <input type="hidden" name="form-name" value="intake" />
+
+            <!-- Honeypot (anti-spam) -->
             <p style="display:none;">
               <label>Don’t fill this out: <input name="bot-field" /></label>
             </p>
@@ -70,15 +81,32 @@
             <div class="grid3">
               <div>
                 <label class="muted small">Full Name</label><br/>
-                <input name="name" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+                <input
+                  name="name"
+                  required
+                  autocomplete="name"
+                  style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+                />
               </div>
+
               <div>
                 <label class="muted small">Email</label><br/>
-                <input type="email" name="email" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  autocomplete="email"
+                  style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+                />
               </div>
+
               <div>
                 <label class="muted small">Phone (optional)</label><br/>
-                <input name="phone" style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+                <input
+                  name="phone"
+                  autocomplete="tel"
+                  style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+                />
               </div>
             </div>
 
@@ -87,20 +115,35 @@
             <div class="grid3">
               <div>
                 <label class="muted small">Requested Tier</label><br/>
-                <select name="tier" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);">
+                <select
+                  name="tier"
+                  required
+                  style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+                >
                   <option value="Starter">Starter (Triage)</option>
                   <option value="Standard">Standard (Trace + Timeline)</option>
                   <option value="Pro">Pro (Evidence Packet)</option>
                   <option value="Training">Training / Mentoring</option>
                 </select>
               </div>
+
               <div>
                 <label class="muted small">Chain / Asset</label><br/>
-                <input name="chain" placeholder="Example: XRP Ledger, Bitcoin, Ethereum, Solana…" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+                <input
+                  name="chain"
+                  placeholder="Example: XRP Ledger, Bitcoin, Ethereum, Solana…"
+                  required
+                  style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+                />
               </div>
+
               <div>
                 <label class="muted small">Incident Date (approx)</label><br/>
-                <input name="incident_date" placeholder="YYYY-MM-DD or approximate" style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+                <input
+                  name="incident_date"
+                  placeholder="YYYY-MM-DD or approximate"
+                  style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+                />
               </div>
             </div>
 
@@ -109,11 +152,20 @@
             <div class="grid2">
               <div>
                 <label class="muted small">Known TXIDs (comma-separated)</label><br/>
-                <textarea name="txids" rows="4" style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"></textarea>
+                <textarea
+                  name="txids"
+                  rows="4"
+                  style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+                ></textarea>
               </div>
+
               <div>
                 <label class="muted small">Wallet Addresses / Exchange Account IDs</label><br/>
-                <textarea name="identifiers" rows="4" style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"></textarea>
+                <textarea
+                  name="identifiers"
+                  rows="4"
+                  style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+                ></textarea>
               </div>
             </div>
 
@@ -121,7 +173,12 @@
 
             <div>
               <label class="muted small">Incident Summary (facts, timeline, what happened)</label><br/>
-              <textarea name="summary" rows="7" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"></textarea>
+              <textarea
+                name="summary"
+                rows="7"
+                required
+                style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"
+              ></textarea>
             </div>
 
             <div style="height:12px"></div>
