@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Intake | Crypto Crimes and Blue Lines</title>
+  <meta name="description" content="Secure intake form for blockchain forensics and crypto fraud investigation support." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Crypto Crimes and Blue Lines" class="logo" />
+        <div class="brand-text">
+          <div class="brand-name">Crypto Crimes and Blue Lines</div>
+          <div class="brand-tag">Blockchain Forensics • Case Packaging • Accountability</div>
+          <div class="badge-row">
+            <span class="badge">Evidence-first</span>
+            <span class="badge">Process-driven</span>
+            <span class="badge">Technical reports</span>
+          </div>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="resources.html">Resources</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link active" href="contact.html">Intake</a>
+        <a class="nav-link" href="legal.html">Legal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="kicker"><span class="dot"></span> INTAKE</div>
+        <h1>Start a case intake.</h1>
+        <p class="lead">
+          Provide the minimum identifiers needed to begin. You’ll get a response with next steps and an evidence checklist.
+        </p>
+
+        <div class="notice warn">
+          <strong>Do NOT submit:</strong> seed phrases, private keys, exchange passwords, or 2FA codes. Ever.
+        </div>
+
+        <div class="notice">
+          If you prefer email, you can also contact: <strong>cryptocrimesandbluelines@gmail.com</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <div class="card">
+          <h2>Case Intake Form</h2>
+          <p class="muted small">Netlify will capture these submissions once deployed. File uploads are optional.</p>
+
+          <form name="intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" enctype="multipart/form-data">
+            <input type="hidden" name="form-name" value="intake" />
+            <p style="display:none;">
+              <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
+
+            <div class="grid3">
+              <div>
+                <label class="muted small">Full Name</label><br/>
+                <input name="name" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+              </div>
+              <div>
+                <label class="muted small">Email</label><br/>
+                <input type="email" name="email" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+              </div>
+              <div>
+                <label class="muted small">Phone (optional)</label><br/>
+                <input name="phone" style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="grid3">
+              <div>
+                <label class="muted small">Requested Tier</label><br/>
+                <select name="tier" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);">
+                  <option value="Starter">Starter (Triage)</option>
+                  <option value="Standard">Standard (Trace + Timeline)</option>
+                  <option value="Pro">Pro (Evidence Packet)</option>
+                  <option value="Training">Training / Mentoring</option>
+                </select>
+              </div>
+              <div>
+                <label class="muted small">Chain / Asset</label><br/>
+                <input name="chain" placeholder="Example: XRP Ledger, Bitcoin, Ethereum, Solana…" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+              </div>
+              <div>
+                <label class="muted small">Incident Date (approx)</label><br/>
+                <input name="incident_date" placeholder="YYYY-MM-DD or approximate" style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);" />
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="grid2">
+              <div>
+                <label class="muted small">Known TXIDs (comma-separated)</label><br/>
+                <textarea name="txids" rows="4" style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"></textarea>
+              </div>
+              <div>
+                <label class="muted small">Wallet Addresses / Exchange Account IDs</label><br/>
+                <textarea name="identifiers" rows="4" style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"></textarea>
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div>
+              <label class="muted small">Incident Summary (facts, timeline, what happened)</label><br/>
+              <textarea name="summary" rows="7" required style="width:100%; margin-top:6px; padding:12px; border-radius:14px; border:1px solid var(--line2); background: rgba(0,0,0,.22); color: var(--text);"></textarea>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div>
+              <label class="muted small">Optional attachments (screenshots, PDFs, exports)</label><br/>
+              <input type="file" name="attachments" multiple style="margin-top:8px; color: var(--muted);" />
+              <div class="soft small" style="margin-top:6px;">Do not upload secrets. Evidence only.</div>
+            </div>
+
+            <div style="height:16px"></div>
+
+            <button class="btn primary" type="submit">Submit Intake</button>
+            <a class="btn" href="services.html">Back to Services</a>
+
+            <div class="notice" style="margin-top:16px;">
+              By submitting, you acknowledge this is not legal advice and no outcome is guaranteed.
+              This is technical investigation support and documentation assistance.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-title">Crypto Crimes and Blue Lines</div>
+        <div class="muted small">Blockchain forensics, technical reporting, and public accountability.</div>
+      </div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Intake</a>
+        <a href="legal.html">Legal</a>
+      </div>
+      <div class="muted small right">© <span id="year"></span> Crypto Crimes and Blue Lines</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

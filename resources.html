@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resources | Crypto Crimes and Blue Lines</title>
+  <meta name="description" content="Free checklists and tools for victims and analysts: evidence preservation, reporting structure, and investigation workflow." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="Crypto Crimes and Blue Lines" class="logo" />
+        <div class="brand-text">
+          <div class="brand-name">Crypto Crimes and Blue Lines</div>
+          <div class="brand-tag">Blockchain Forensics • Case Packaging • Accountability</div>
+          <div class="badge-row">
+            <span class="badge">Evidence-first</span>
+            <span class="badge">Process-driven</span>
+            <span class="badge">Technical reports</span>
+          </div>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">Menu</button>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link active" href="resources.html">Resources</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Intake</a>
+        <a class="nav-link" href="legal.html">Legal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="kicker"><span class="dot"></span> FREE TOOLS</div>
+        <h1>Resources for victims and analysts.</h1>
+        <p class="lead">This page is designed to build trust: practical checklists, clean workflow, and “what to do next.”</p>
+
+        <div class="notice warn">
+          <strong>Safety:</strong> Never share seed phrases, private keys, exchange passwords, or 2FA codes. No legitimate helper needs them.
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <h2>Evidence Preservation Checklist</h2>
+        <div class="card">
+          <div class="codebox">
+IMMEDIATE (DO THIS FIRST)
+- Screenshot: exchange login events, API keys, withdraw history, deposit history
+- Export: CSVs if available (transactions, orders, withdrawals, deposits)
+- Record: exact timestamps + timezone + TXIDs + wallet addresses
+- Preserve: emails, texts, chats, and support tickets (PDF exports)
+- If wallet: capture address + public keys (NOT private keys)
+
+CHAIN DATA
+- TXID list (chronological)
+- Sender + receiver addresses for each hop
+- Memo/Tag fields if applicable
+- Explorer links + screenshots
+
+DO NOT
+- Post seed phrases “for help”
+- Pay “recovery agents” demanding upfront fees
+- Install remote-access tools for strangers
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Reporting Templates (High-level)</h2>
+        <div class="grid3">
+          <div class="card">
+            <h3>Police Report Structure</h3>
+            <p class="muted">Write like a timeline, not like a rant. Facts + exhibits + what you’re requesting.</p>
+          </div>
+          <div class="card">
+            <h3>Exchange Support Ticket</h3>
+            <p class="muted">Short, precise: compromised account, timestamps, withdrawal IDs, destination address, request for preservation.</p>
+          </div>
+          <div class="card">
+            <h3>IC3 / Federal Intake</h3>
+            <p class="muted">Organize into: incident summary, losses, identifiers, evidence packet, and escalation list.</p>
+          </div>
+        </div>
+
+        <div class="notice">
+          Want these as downloadable PDFs later? We’ll generate them once the site is deployed.
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <h2>Learn the chain</h2>
+        <div class="grid3">
+          <div class="card">
+            <h3>Explorers</h3>
+            <p class="muted">Use official explorers for the chain you’re investigating. Always cross-check.</p>
+          </div>
+          <div class="card">
+            <h3>How to read TXIDs</h3>
+            <p class="muted">Inputs/outputs, timestamps, fees, memo/tag fields. Don’t guess.</p>
+          </div>
+          <div class="card">
+            <h3>Common laundering patterns</h3>
+            <p class="muted">Fragmentation, repeated rounded transfers, exchange touchpoints, tag/memo usage, bot-like timing.</p>
+          </div>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn primary" href="contact.html">Get help with your case</a>
+          <a class="btn" href="services.html">See services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-title">Crypto Crimes and Blue Lines</div>
+        <div class="muted small">Blockchain forensics, technical reporting, and public accountability.</div>
+      </div>
+      <div class="footer-links">
+        <a href="services.html">Services</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Intake</a>
+        <a href="legal.html">Legal</a>
+      </div>
+      <div class="muted small right">© <span id="year"></span> Crypto Crimes and Blue Lines</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

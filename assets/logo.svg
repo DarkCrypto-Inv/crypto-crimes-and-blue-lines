@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crypto Crimes and Blue Lines">
+  <defs>
+    <radialGradient id="g1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(30 22) rotate(52) scale(90 90)">
+      <stop stop-color="#9BFFD7" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#6AA6FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#0A1020" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="g2" x1="14" y1="12" x2="82" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6AA6FF"/>
+      <stop offset="1" stop-color="#9BFFD7"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 0.55 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- base -->
+  <rect x="10" y="10" width="76" height="76" rx="18" fill="#0B1222" stroke="rgba(255,255,255,0.14)" />
+  <rect x="10" y="10" width="76" height="76" rx="18" fill="url(#g1)" opacity="0.95"/>
+
+  <!-- subtle grid -->
+  <g opacity="0.12">
+    <path d="M20 24H76" stroke="white" stroke-width="1"/>
+    <path d="M20 36H76" stroke="white" stroke-width="1"/>
+    <path d="M20 48H76" stroke="white" stroke-width="1"/>
+    <path d="M20 60H76" stroke="white" stroke-width="1"/>
+    <path d="M20 72H76" stroke="white" stroke-width="1"/>
+    <path d="M24 20V76" stroke="white" stroke-width="1"/>
+    <path d="M36 20V76" stroke="white" stroke-width="1"/>
+    <path d="M48 20V76" stroke="white" stroke-width="1"/>
+    <path d="M60 20V76" stroke="white" stroke-width="1"/>
+    <path d="M72 20V76" stroke="white" stroke-width="1"/>
+  </g>
+
+  <!-- shield -->
+  <path filter="url(#glow)" d="M48 22C40.5 26.2 33.5 27.8 27 29.2V49.8C27 62.8 36.2 72.6 48 76C59.8 72.6 69 62.8 69 49.8V29.2C62.5 27.8 55.5 26.2 48 22Z"
+    fill="rgba(0,0,0,0.25)" stroke="url(#g2)" stroke-width="2.2" />
+
+  <!-- chain (left) -->
+  <path d="M38 44c-3.9 0-7 3.1-7 7s3.1 7 7 7h3" stroke="#6AA6FF" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M41 44h-3" stroke="#6AA6FF" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M41 58h-3" stroke="#6AA6FF" stroke-width="2.6" stroke-linecap="round"/>
+
+  <!-- chain (right) -->
+  <path d="M58 44h3c3.9 0 7 3.1 7 7s-3.1 7-7 7h-3" stroke="#9BFFD7" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M55 44h3" stroke="#9BFFD7" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M55 58h3" stroke="#9BFFD7" stroke-width="2.6" stroke-linecap="round"/>
+
+  <!-- link bridge -->
+  <path d="M43 51h10" stroke="white" stroke-opacity="0.85" stroke-width="2.6" stroke-linecap="round"/>
+
+  <!-- small pulse dot -->
+  <circle cx="66" cy="30" r="2.2" fill="#FFC66A"/>
+</svg>
